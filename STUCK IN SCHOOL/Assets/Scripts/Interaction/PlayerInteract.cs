@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public float interactDistance = 3f;
     public Camera playerCamera;
+    public float interactDistance = 5f;
 
     private void Update()
     {
@@ -13,7 +13,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (playerCamera == null)
             {
-                Debug.LogWarning("Player camera is not assigned.");
+                Debug.LogError("Player camera is NULL");
                 return;
             }
 
@@ -22,22 +22,21 @@ public class PlayerInteract : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, interactDistance))
             {
-                Debug.Log("Hit: " + hit.collider.name);
+                Debug.Log("Hit object: " + hit.collider.gameObject.name);
 
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
-
                 if (interactable != null)
                 {
                     interactable.Interact();
                 }
                 else
                 {
-                    Debug.Log("This object does not have an Interactable script.");
+                    Debug.Log("Hit object has no Interactable script");
                 }
             }
             else
             {
-                Debug.Log("Nothing hit.");
+                Debug.Log("Nothing hit");
             }
         }
     }

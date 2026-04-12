@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    public string objectMessage = "Interaction works";
+
     public void Interact()
     {
-        Debug.Log("You interacted with: " + gameObject.name);
+        Debug.Log("Interacted with: " + gameObject.name);
+        Debug.Log(objectMessage);
     }
 }
