@@ -3,41 +3,41 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public Camera playerCamera;
-    public float interactDistance = 5f;
+    public float interactDistance = 40f;
+
+    public GameObject interactUI; // 👈 UI reference
+
+    private Interactable currentInteractable;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("E pressed");
+        CheckForInteractable();
 
-            if (playerCamera == null)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        {
+            currentInteractable.Interact();
+        }
+    }
+
+    void CheckForInteractable()
+    {
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactDistance))
+        {
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            if (interactable != null)
             {
-                Debug.LogError("Player camera is NULL");
+                currentInteractable = interactable;
+                interactUI.SetActive(true); // 👈 SHOW UI
                 return;
             }
-
-            Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, interactDistance))
-            {
-                Debug.Log("Hit object: " + hit.collider.gameObject.name);
-
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
-                {
-                    interactable.Interact();
-                }
-                else
-                {
-                    Debug.Log("Hit object has no Interactable script");
-                }
-            }
-            else
-            {
-                Debug.Log("Nothing hit");
-            }
         }
+
+        // If nothing hit or no interactable
+        currentInteractable = null;
+        interactUI.SetActive(false); // 👈 HIDE UI
     }
 }
