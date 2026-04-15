@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 63e15dc114b7db344a086e2dfb62b29b
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 267961
+  packageName: 'Starter Assets: Character Controllers | URP'
+  packageVersion: 2.0.2
+  assetPath: Assets/Starter Assets/Sample/FirstPersonController/Playground.unity
+  uploadId: 721456
