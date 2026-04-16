@@ -1,6 +1,26 @@
-Library
-temp
-logs
-obj
-UserSettings
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
 
+# User settings
+UserSettings/
+
+# IDE / Visual Studio / Rider
+.vs/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.booproj
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Unity cache / artifacts
+MemoryCaptures/
