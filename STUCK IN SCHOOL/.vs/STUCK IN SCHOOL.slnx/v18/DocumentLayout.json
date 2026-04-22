@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\interaction\\boardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\boardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\interaction\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\interaction\\boardinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\boardinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\interaction\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BoardUI.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\BoardUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\BoardUI.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\BoardUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\BoardUI.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:39:12.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BoardInteract.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\BoardInteract.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\BoardInteract.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\BoardInteract.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\BoardInteract.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T09:32:10.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerInteract.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\PlayerInteract.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\PlayerInteract.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\PlayerInteract.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\PlayerInteract.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T15:38:42.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Interactable.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\Interactable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\Interactable.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\Interactable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\Interactable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T15:20:59.787Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
