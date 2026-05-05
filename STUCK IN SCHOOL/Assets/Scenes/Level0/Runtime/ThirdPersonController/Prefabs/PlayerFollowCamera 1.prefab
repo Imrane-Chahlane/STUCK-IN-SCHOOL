@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5608444361394902445}
   - component: {fileID: 8187159127563155642}
   m_Layer: 0
-  m_Name: PlayerFollowCamera
+  m_Name: PlayerFollowCamera 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
