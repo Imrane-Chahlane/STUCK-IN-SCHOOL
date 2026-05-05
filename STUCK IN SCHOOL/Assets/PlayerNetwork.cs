@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerNetwork : NetworkBehaviour
 {
-    [Header("Références (assigner dans le prefab)")]
     [SerializeField] private Transform cameraTarget;
     [SerializeField] private StarterAssets.ThirdPersonController thirdPersonController;
     [SerializeField] private StarterAssets.StarterAssetsInputs starterAssetsInputs;
@@ -36,31 +35,14 @@ public class PlayerNetwork : NetworkBehaviour
     private void Update()
     {
         if (!_setupDone && IsSpawned)
-        {
             TrySetup();
-            return;
-        }
-
-        if (!IsSpawned) return;
-
-        if (IsOwner && characterController != null)
-        {
-            transform.position = characterController.transform.position;
-            transform.rotation = characterController.transform.rotation;
-        }
-        else if (!IsOwner && characterController != null)
-        {
-            characterController.transform.position = transform.position;
-            characterController.transform.rotation = transform.rotation;
-        }
     }
 
     private void TrySetup()
     {
         if (!IsSpawned) return;
-        ulong localId = NetworkManager.Singleton.LocalClientId;
 
-        if (OwnerClientId == localId)
+        if (OwnerClientId == NetworkManager.Singleton.LocalClientId)
         {
             _setupDone = true;
             EnableOwner();
@@ -89,10 +71,6 @@ public class PlayerNetwork : NetworkBehaviour
             vcam.Target.TrackingTarget = cameraTarget;
             vcam.Target.LookAtTarget   = cameraTarget;
             Debug.Log("[PlayerNetwork] ✅ Caméra liée");
-        }
-        else
-        {
-            Debug.LogWarning($"[PlayerNetwork] ❌ vcam:{vcam} | cameraTarget:{cameraTarget}");
         }
 
         Debug.Log($"[PlayerNetwork] ✅ Owner activé — ClientId:{OwnerClientId}");
