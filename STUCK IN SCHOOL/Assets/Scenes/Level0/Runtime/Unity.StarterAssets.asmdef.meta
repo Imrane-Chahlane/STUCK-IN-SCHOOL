@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 267961
   packageName: 'Starter Assets: Character Controllers | URP'
   packageVersion: 2.0.2
-  assetPath: Assets/Starter Assets/Runtime/Unity.StarterAssets.asmdef
+  assetPath: Assets/Scenes/Level0/Runtime/Unity.StarterAssets.asmdef
   uploadId: 721456

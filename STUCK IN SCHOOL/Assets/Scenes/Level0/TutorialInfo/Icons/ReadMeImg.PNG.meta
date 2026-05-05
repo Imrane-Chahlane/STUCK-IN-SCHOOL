@@ -99,5 +99,5 @@ AssetOrigin:
   productId: 267961
   packageName: 'Starter Assets: Character Controllers | URP'
   packageVersion: 2.0.2
-  assetPath: Assets/Starter Assets/TutorialInfo/Icons/ReadMeImg.PNG
+  assetPath: Assets/Scenes/Level0/TutorialInfo/Icons/ReadMeImg.PNG
   uploadId: 721456

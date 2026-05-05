@@ -892,5 +892,5 @@ AssetOrigin:
   productId: 267961
   packageName: 'Starter Assets: Character Controllers | URP'
   packageVersion: 2.0.2
-  assetPath: Assets/Starter Assets/Runtime/ThirdPersonController/Character/Models/Armature.fbx
+  assetPath: Assets/Scenes/Level0/Runtime/ThirdPersonController/Character/Models/Armature.fbx
   uploadId: 721456

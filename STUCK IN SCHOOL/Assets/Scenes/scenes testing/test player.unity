@@ -521,7 +521,17 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 653028027}
-    m_RemovedComponents: []
+    - target: {fileID: 8114126671043513684, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 653028027}
+    - target: {fileID: 8114126671043513684, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+      propertyPath: Target.CustomLookAtTarget
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+    - {fileID: 5228145799687424370, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -980,7 +990,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3e364d9cf112143ac24cde314711ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  controller: {fileID: 0}
   speed: 7
+  gravity: -20
+  jumpHeight: 1.5
+  groundCheck: {fileID: 0}
+  groundDistance: 0.3
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1766645795
 MonoBehaviour:
   m_ObjectHideFlags: 0
