@@ -6,5 +6,5 @@ AssetOrigin:
   productId: 267961
   packageName: 'Starter Assets: Character Controllers | URP'
   packageVersion: 2.0.2
-  assetPath: Assets/Starter Assets/Editor/ThirdPersonStarterAssetsDeployMenu.cs
+  assetPath: Assets/Scenes/Level0/Editor/ThirdPersonStarterAssetsDeployMenu.cs
   uploadId: 721456

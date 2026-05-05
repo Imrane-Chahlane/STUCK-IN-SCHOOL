@@ -13,5 +13,5 @@ AssetOrigin:
   productId: 267961
   packageName: 'Starter Assets: Character Controllers | URP'
   packageVersion: 2.0.2
-  assetPath: Assets/Starter Assets/Sample/Environment/Shaders/URP_HDRP_ShaderGraph/UrpTriplanar.shadergraph
+  assetPath: Assets/Scenes/Level0/Sample/Environment/Shaders/URP_HDRP_ShaderGraph/UrpTriplanar.shadergraph
   uploadId: 721456

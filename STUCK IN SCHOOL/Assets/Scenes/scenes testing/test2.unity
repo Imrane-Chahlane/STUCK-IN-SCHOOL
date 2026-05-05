@@ -1701,7 +1701,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3e364d9cf112143ac24cde314711ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  controller: {fileID: 0}
   speed: 5
+  gravity: -20
+  jumpHeight: 1.5
+  groundCheck: {fileID: 0}
+  groundDistance: 0.3
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &1147039698
 CapsuleCollider:
   m_ObjectHideFlags: 0
