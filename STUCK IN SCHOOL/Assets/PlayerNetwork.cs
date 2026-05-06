@@ -74,6 +74,11 @@ public class PlayerNetwork : NetworkBehaviour
         }
 
         Debug.Log($"[PlayerNetwork] ✅ Owner activé — ClientId:{OwnerClientId}");
+        // Masquer le mesh du joueur local (on ne se voit pas en FPS)
+        foreach (var renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+        }
     }
 
     private void DisableRemote()
@@ -84,5 +89,10 @@ public class PlayerNetwork : NetworkBehaviour
         if (characterController != null)   characterController.enabled   = false;
 
         Debug.Log($"[PlayerNetwork] Remote désactivé — ClientId:{OwnerClientId}");
+        // S'assurer que les joueurs distants sont bien visibles
+        foreach (var renderer in GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        }
     }
 }
