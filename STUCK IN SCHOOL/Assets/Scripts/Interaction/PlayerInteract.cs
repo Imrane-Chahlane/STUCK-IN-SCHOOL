@@ -1,45 +1,38 @@
 using UnityEngine;
-using TMPro;
+
 public class PlayerInteract : MonoBehaviour
 {
     public Camera playerCamera;
     public float interactDistance = 60f;
 
-    public GameObject interactUI; // 👈 UI reference
+    public GameObject interactUI;
 
-    private Interactable currentInteractable;
+    public Keypad keypad; // 🔐 for linking inventory
+
+    private IInteractable currentInteractable;
+    private PlayerInventory playerInventory;
 
     private void Start()
     {
         if (playerCamera == null)
             playerCamera = Camera.main;
 
-        // Chercher dans tous les Canvas même désactivés
+        // Get player inventory (important for multiplayer-ready design)
+        playerInventory = GetComponent<PlayerInventory>();
+
+        // Auto find UI if not assigned
         if (interactUI == null)
         {
-            // Chercher par nom
-            interactUI = GameObject.Find("IntercatableText");
-            
-            // Si pas trouvé, chercher dans tous les objets
-            if (interactUI == null)
-            {
-                TextMeshProUGUI[] allTexts = FindObjectsByType<TextMeshProUGUI>(
-                    FindObjectsInactive.Include, 
-                    FindObjectsSortMode.None);
-                foreach (var t in allTexts)
-                {
-                    if (t.gameObject.name == "IntercatableText")
-                    {
-                        interactUI = t.gameObject;
-                        break;
-                    }
-                }   
-            }
+            GameObject found = GameObject.FindWithTag("InteractUI");
+            if (found != null)
+                interactUI = found;
         }
-    
+
+        // UI MUST start hidden
         if (interactUI != null)
             interactUI.SetActive(false);
     }
+
     private void Update()
     {
         CheckForInteractable();
@@ -52,23 +45,43 @@ public class PlayerInteract : MonoBehaviour
 
     void CheckForInteractable()
     {
+        Debug.Log("UI ACTIVE STATE: " + interactUI.activeSelf);
+
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            Debug.Log("Hit: " + hit.collider.name);
+
+            IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
 
             if (interactable != null)
             {
+                Debug.Log("INTERACTABLE FOUND");
+
                 currentInteractable = interactable;
-                interactUI.SetActive(true); // 👈 SHOW UI
+
+                if (interactUI != null)
+                    interactUI.SetActive(true);
+
+                // 🔐 KEYPAD HANDLING
+                Keypad kp = hit.collider.GetComponentInParent<Keypad>();
+
+                if (kp != null && playerInventory != null)
+                {
+                    kp.SetInventory(playerInventory);
+                }
+
                 return;
             }
         }
 
-        // If nothing hit or no interactable
+        Debug.Log("NO INTERACTABLE");
+
         currentInteractable = null;
-        interactUI.SetActive(false); // 👈 HIDE UI
+
+        if (interactUI != null)
+            interactUI.SetActive(false);
     }
 }
