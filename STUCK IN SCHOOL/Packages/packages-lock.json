@@ -154,6 +154,25 @@
         "com.unity.modules.uielements": "1.0.0"
       }
     },
+    "com.unity.multiplayer.center.quickstart": {
+      "version": "1.1.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.multiplayer.center": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.multiplayer.playmode": {
+      "version": "2.0.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.2"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.netcode.gameobjects": {
       "version": "2.11.2",
       "depth": 0,
@@ -296,6 +315,18 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.services.vivox": {
+      "version": "16.10.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.services.core": "1.15.1",
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.services.wire": {
       "version": "1.4.3",
       "depth": 1,
@@ -309,7 +340,7 @@
     },
     "com.unity.settings-manager": {
       "version": "2.1.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -367,8 +398,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.transport": {
+<<<<<<< HEAD
       "version": "2.7.1",
       "depth": 1,
+=======
+      "version": "2.7.2",
+      "depth": 0,
+>>>>>>> 84e5736e14628eb206c0981b82996f7de8777ea0
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.24",

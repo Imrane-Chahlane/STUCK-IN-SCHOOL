@@ -59,12 +59,14 @@
     <Compile Include="Assets\Scripts\KeypadSystem.cs" />
     <Compile Include="Assets\PlayerNetwork.cs" />
     <Compile Include="Assets\ConnectionManager.cs" />
+    <Compile Include="Assets\ParrelSync-master\Examples\CustomArgumentExample.cs" />
     <Compile Include="Assets\Scripts\AddCollidersToChildren.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\TreasureOpening.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameProgress.cs" />
+    <Compile Include="Assets\PlayerCameraSetup.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +94,7 @@
     <None Include="Assets\Models\Novacorp Studios\Shaders\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_lighting_unity.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\ParrelSync-master\VERSION.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
@@ -1609,6 +1612,7 @@
     <ProjectReference Include="URPWizard.csproj" />
     <ProjectReference Include="Unity.StarterAssets.csproj" />
     <ProjectReference Include="Unity.StarterAssets.Editor.csproj" />
+    <ProjectReference Include="ParrelSync.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

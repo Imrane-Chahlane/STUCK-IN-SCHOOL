@@ -1642,6 +1642,7 @@
     <ProjectReference Include="URPWizard.csproj" />
     <ProjectReference Include="Unity.StarterAssets.csproj" />
     <ProjectReference Include="Unity.StarterAssets.Editor.csproj" />
+    <ProjectReference Include="ParrelSync.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

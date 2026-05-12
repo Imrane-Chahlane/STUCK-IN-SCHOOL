@@ -9,6 +9,7 @@
   <Project Path="VRMShaders.VRM.IO.Runtime.csproj" />
   <Project Path="VRMShaders.VRM10.MToon10.Runtime.csproj" />
   <Project Path="VRMShaders.GLTF.IO.Tests.csproj" />
+  <Project Path="ParrelSync.csproj" />
   <Project Path="Unity.StarterAssets.csproj" />
   <Project Path="VRMShaders.VRM10.MToon10.Editor.csproj" />
   <Project Path="MToon.Editor.csproj" />
