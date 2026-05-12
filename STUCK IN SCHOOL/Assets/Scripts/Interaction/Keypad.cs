@@ -1,16 +1,15 @@
+using Unity.Netcode;
 using UnityEngine;
 using TMPro;
 
-public class Keypad : MonoBehaviour
+public class Keypad : NetworkBehaviour, IInteractable
 {
     public string correctCode = "1234";
-
     private string input = "";
-
     public TMP_Text display;
-
     private PlayerInventory inventory;
 
+    public void Interact() { }
 
     public void SetInventory(PlayerInventory inv)
     {
@@ -34,33 +33,33 @@ public class Keypad : MonoBehaviour
 
     public void Submit()
     {
-        // Find player inventory dynamically
         if (inventory == null)
         {
-            inventory = FindFirstObjectByType<PlayerInventory>();
+            foreach (var inv in FindObjectsByType<PlayerInventory>(FindObjectsSortMode.None))
+            {
+                if (inv.IsOwner)
+                {
+                    inventory = inv;
+                    break;
+                }
+            }
         }
-        Debug.Log("Submit called");
-        Debug.Log("Inventory = " + inventory);
 
         if (inventory == null)
         {
-            Debug.LogError("NO PLAYER INVENTORY FOUND!");
+            Debug.LogError("NO LOCAL PLAYER INVENTORY FOUND!");
             return;
         }
 
         if (input == correctCode)
         {
-            Debug.Log("Correct Code!");
-
             inventory.GiveKey();
-
             input = "";
             display.text = "";
         }
         else
         {
             Debug.Log("Wrong Code!");
-
             input = "";
             display.text = "";
         }

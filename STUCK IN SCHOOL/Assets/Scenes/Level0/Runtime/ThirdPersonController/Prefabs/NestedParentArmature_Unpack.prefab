@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5458419806168928078}
   - component: {fileID: -3557896973061676359}
   - component: {fileID: 819817927533635356}
+  - component: {fileID: -8674283005069155020}
   m_Layer: 6
   m_Name: NestedParentArmature_Unpack
   m_TagString: Untagged
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4172557648
+  GlobalObjectIdHash: 1981190131
   InScenePlacedSourceGlobalObjectIdHash: 1981190131
   DeferredDespawnTick: 0
   Ownership: 1
@@ -78,7 +79,7 @@ MonoBehaviour:
   thirdPersonController: {fileID: 974238578668270715}
   starterAssetsInputs: {fileID: 3543048675319490572}
   characterController: {fileID: 974238578668270714}
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 974238578668270716}
 --- !u!114 &-3557896973061676359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7578c956c70f79479d6850a2570a15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
+  ShowTopMostFoldoutHeaderGroup: 1
   playerCamera: {fileID: 0}
   interactDistance: 40
   interactUI: {fileID: 0}
@@ -107,7 +109,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418e77e8d8fa9904aaff0ccc8ac77e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
-  hasKey: 0
+  ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &-8674283005069155020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8047161636021232021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e3138af504f6047b5b651070e27532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDoorOpener
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!1001 &374940548228479727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -796,11 +811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8338988566280778637, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.666
+      value: 1.658
       objectReference: {fileID: 0}
     - target: {fileID: 8338988566280778637, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.203
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8345528668818648182, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Layer
@@ -920,6 +935,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &974238578668270716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4416926081852918493, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 3515378426657685153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974238578668270704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3543048675319490572 stripped
