@@ -1,74 +1,87 @@
+using Unity.Netcode;
 using UnityEngine;
-using TMPro;
-public class PlayerInteract : MonoBehaviour
+
+public class PlayerInteract : NetworkBehaviour
 {
     public Camera playerCamera;
     public float interactDistance = 60f;
+    public GameObject interactUI;
+    public Keypad keypad;
 
-    public GameObject interactUI; // 👈 UI reference
-
-    private Interactable currentInteractable;
+    private IInteractable currentInteractable;
+    private PlayerInventory playerInventory;
 
     private void Start()
     {
+        if (!IsOwner)
+        {
+            enabled = false;
+            return;
+        }
+
         if (playerCamera == null)
             playerCamera = Camera.main;
 
-        // Chercher dans tous les Canvas même désactivés
+        playerInventory = GetComponent<PlayerInventory>();
+
         if (interactUI == null)
         {
-            // Chercher par nom
-            interactUI = GameObject.Find("IntercatableText");
-            
-            // Si pas trouvé, chercher dans tous les objets
-            if (interactUI == null)
-            {
-                TextMeshProUGUI[] allTexts = FindObjectsByType<TextMeshProUGUI>(
-                    FindObjectsInactive.Include, 
-                    FindObjectsSortMode.None);
-                foreach (var t in allTexts)
-                {
-                    if (t.gameObject.name == "IntercatableText")
-                    {
-                        interactUI = t.gameObject;
-                        break;
-                    }
-                }   
-            }
+            GameObject found = GameObject.FindWithTag("InteractUI");
+            if (found != null)
+                interactUI = found;
         }
-    
+
         if (interactUI != null)
             interactUI.SetActive(false);
     }
+
     private void Update()
     {
+        if (!IsOwner) return;
+
+        // Fermer le keypad avec Échap
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LockerPuzzle locker = FindFirstObjectByType<LockerPuzzle>();
+            if (locker != null)
+                locker.CloseKeypad();
+        }
+
         CheckForInteractable();
 
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
-        {
             currentInteractable.Interact();
-        }
     }
 
     void CheckForInteractable()
     {
+        if (playerCamera == null) return;
+
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, interactDistance))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            IInteractable interactable = hit.collider.GetComponentInParent<IInteractable>();
 
             if (interactable != null)
             {
                 currentInteractable = interactable;
-                interactUI.SetActive(true); // 👈 SHOW UI
+
+                if (interactUI != null)
+                    interactUI.SetActive(true);
+
+                Keypad kp = hit.collider.GetComponentInParent<Keypad>();
+                if (kp != null && playerInventory != null)
+                    kp.SetInventory(playerInventory);
+
                 return;
             }
         }
 
-        // If nothing hit or no interactable
         currentInteractable = null;
-        interactUI.SetActive(false); // 👈 HIDE UI
+
+        if (interactUI != null)
+            interactUI.SetActive(false);
     }
 }

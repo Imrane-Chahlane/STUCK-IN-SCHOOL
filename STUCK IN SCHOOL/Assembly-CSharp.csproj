@@ -52,21 +52,30 @@
     <Analyzer Include="C:\Users\pcyas\STUCK-IN-SCHOOL\STUCK IN SCHOOL\Library\PackageCache\com.unity.dt.app-ui@8ac7e730dd5d\Runtime\MVVM\SourceGenerators\netstandard2.0\MVVMSourceGenerators.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Interaction\IInteractable.cs" />
     <Compile Include="Assets\Scenes\scenes testing\ThirdPersonController\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\Interaction\PlayerInteract.cs" />
+    <Compile Include="Assets\Scripts\Interaction\KeyUIManager.cs" />
+    <Compile Include="Assets\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\DoorManager.cs" />
     <Compile Include="Assets\Scripts\Player\mycontrolle.cs" />
     <Compile Include="Assets\Scripts\KeypadSystem.cs" />
     <Compile Include="Assets\PlayerNetwork.cs" />
+    <Compile Include="Assets\Scripts\Interaction\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Interaction\PlayerDoorOpener.cs" />
     <Compile Include="Assets\ConnectionManager.cs" />
+    <Compile Include="Assets\Scripts\Interaction\CursorToggle.cs" />
+    <Compile Include="Assets\Scripts\Interaction\KeyDoor.cs" />
     <Compile Include="Assets\ParrelSync-master\Examples\CustomArgumentExample.cs" />
     <Compile Include="Assets\Scripts\AddCollidersToChildren.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Interaction\Keypad.cs" />
     <Compile Include="Assets\Scripts\TreasureOpening.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameProgress.cs" />
     <Compile Include="Assets\PlayerCameraSetup.cs" />
+    <Compile Include="Assets\Scripts\Interaction\LockerPuzzle.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
   </ItemGroup>
   <ItemGroup>
