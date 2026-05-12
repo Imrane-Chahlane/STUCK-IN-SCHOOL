@@ -1,15 +1,18 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
 
 public class KeyUIManager : MonoBehaviour
 {
     public static KeyUIManager Instance;
-
     public GameObject keyTextUI;
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
     }
 

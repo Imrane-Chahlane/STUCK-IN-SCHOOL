@@ -375,8 +375,12 @@ namespace StarterAssets
             {
                 if (FootstepAudioClips.Length > 0)
                 {
+                    // Vérifier que le controller est actif (joueur local uniquement)
+                    if (_controller == null || !_controller.enabled) return;
+                    
                     var index = Random.Range(0, FootstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    if (FootstepAudioClips[index] != null)
+                        AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
                 }
             }
         }
@@ -385,7 +389,11 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                // Vérifier que le controller est actif (joueur local uniquement)
+                if (_controller == null || !_controller.enabled) return;
+
+                if (LandingAudioClip != null)
+                    AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
     }
