@@ -44,7 +44,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.28",
+      "version": "1.8.29",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -63,8 +63,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cloud.gltfast": {
-      "version": "6.14.1",
-      "depth": 1,
+      "version": "6.18.0",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.24",
@@ -246,7 +246,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.services.authentication": {
-      "version": "3.6.0",
+      "version": "3.6.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -376,7 +376,7 @@
       }
     },
     "com.unity.test-framework.performance": {
-      "version": "3.3.0",
+      "version": "3.4.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {

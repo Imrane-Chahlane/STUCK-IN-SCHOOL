@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Keypad : MonoBehaviour
 {
@@ -9,8 +10,14 @@ public class Keypad : MonoBehaviour
 
     public TMP_Text display;
 
-    private PlayerInventory inventory;
+    // ──────────────────────────────────────────
+    // AJOUTE CES 2 LIGNES (glisser dans Inspector)
+    public Animator chestAnimator;  // glisser Treasure ici
+    public KeyDoor keyDoor;         // glisser Door ici
+    public KeyDoor keyDoor2;        // glisser keyDoor2 ici
+    // ──────────────────────────────────────────
 
+    private PlayerInventory inventory;
 
     public void SetInventory(PlayerInventory inv)
     {
@@ -19,6 +26,7 @@ public class Keypad : MonoBehaviour
 
     public void AddNumber(string number)
     {
+        if (input.Length >= 4) return; // max 4 chiffres
         input += number;
         display.text = input;
     }
@@ -34,13 +42,8 @@ public class Keypad : MonoBehaviour
 
     public void Submit()
     {
-        // Find player inventory dynamically
         if (inventory == null)
-        {
             inventory = FindFirstObjectByType<PlayerInventory>();
-        }
-        Debug.Log("Submit called");
-        Debug.Log("Inventory = " + inventory);
 
         if (inventory == null)
         {
@@ -52,17 +55,50 @@ public class Keypad : MonoBehaviour
         {
             Debug.Log("Correct Code!");
 
+            // Feedback vert
+            display.color = Color.green;
+            display.text = "CORRECT !";
+
+            // Donne la clé
             inventory.GiveKey();
 
+            // Ouvre le coffre
+            if (chestAnimator != null)
+                chestAnimator.SetBool("Open", true);
+
+            // Ouvre la porte après 2 secondes
+            StartCoroutine(OpenDoorAfterDelay(2f));
+
             input = "";
-            display.text = "";
         }
         else
         {
             Debug.Log("Wrong Code!");
 
+            // Feedback rouge
+            display.color = Color.red;
+            display.text = "ERREUR !";
+
+            // Remet à zéro après 1 seconde
+            StartCoroutine(ResetAfterDelay(1f));
+
             input = "";
-            display.text = "";
         }
+    }
+
+    private IEnumerator OpenDoorAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (keyDoor != null)
+            keyDoor.ForceOpen();
+        if (keyDoor2 != null)      // ← AJOUTE CES 2 LIGNES
+            keyDoor2.ForceOpen();
+    }
+
+    private IEnumerator ResetAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        display.color = Color.white;
+        display.text = "";
     }
 }
