@@ -1,0 +1,88 @@
+fileFormatVersion: 2
+guid: 47bd2c1ea4b1a4844aad1f9b3eab6a5f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 715df9372183c47e389bb6e19fbc3b52, type: 3}
+  editorImportSettings:
+    generateSecondaryUVSet: 0
+  importSettings:
+    nodeNameMethod: 1
+    animationMethod: 2
+    generateMipMaps: 1
+    texturesReadable: 0
+    defaultMinFilterMode: 9729
+    defaultMagFilterMode: 9729
+    anisotropicFilterLevel: 1
+  instantiationSettings:
+    mask: -1
+    layer: 0
+    skinUpdateWhenOffscreen: 1
+    lightIntensityFactor: 1
+    sceneObjectCreation: 2
+  assetDependencies:
+  - type: 0
+    originalUri: Assets\New Folder\scene.bin
+    assetPath: Assets\New Folder\scene.bin
+  - type: 1
+    originalUri: Assets\New Folder\textures\lambert6SG.001_baseColor.jpeg
+    assetPath: Assets\New Folder\textures\lambert6SG.001_baseColor.jpeg
+  - type: 1
+    originalUri: Assets\New Folder\textures\lambert6SG.001_metallicRoughness.png
+    assetPath: Assets\New Folder\textures\lambert6SG.001_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\lambert6SG.001_normal.png
+    assetPath: Assets\New Folder\textures\lambert6SG.001_normal.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\red_shader.002_baseColor.png
+    assetPath: Assets\New Folder\textures\red_shader.002_baseColor.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\red_shader.002_metallicRoughness.png
+    assetPath: Assets\New Folder\textures\red_shader.002_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\red_shader.002_emissive.png
+    assetPath: Assets\New Folder\textures\red_shader.002_emissive.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\red_shader.002_normal.png
+    assetPath: Assets\New Folder\textures\red_shader.002_normal.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\green_shader.004_baseColor.png
+    assetPath: Assets\New Folder\textures\green_shader.004_baseColor.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\green_shader.004_metallicRoughness.png
+    assetPath: Assets\New Folder\textures\green_shader.004_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\green_shader.004_normal.png
+    assetPath: Assets\New Folder\textures\green_shader.004_normal.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\yellow_shader.002_baseColor.jpeg
+    assetPath: Assets\New Folder\textures\yellow_shader.002_baseColor.jpeg
+  - type: 1
+    originalUri: Assets\New Folder\textures\yellow_shader.002_metallicRoughness.png
+    assetPath: Assets\New Folder\textures\yellow_shader.002_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\yellow_shader.002_normal.png
+    assetPath: Assets\New Folder\textures\yellow_shader.002_normal.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\initialShadingGroup.004_baseColor.jpeg
+    assetPath: Assets\New Folder\textures\initialShadingGroup.004_baseColor.jpeg
+  - type: 1
+    originalUri: Assets\New Folder\textures\initialShadingGroup.004_metallicRoughness.png
+    assetPath: Assets\New Folder\textures\initialShadingGroup.004_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\initialShadingGroup.004_normal.png
+    assetPath: Assets\New Folder\textures\initialShadingGroup.004_normal.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\green_shader.005_baseColor.jpeg
+    assetPath: Assets\New Folder\textures\green_shader.005_baseColor.jpeg
+  - type: 1
+    originalUri: Assets\New Folder\textures\green_shader.005_metallicRoughness.png
+    assetPath: Assets\New Folder\textures\green_shader.005_metallicRoughness.png
+  - type: 1
+    originalUri: Assets\New Folder\textures\green_shader.005_normal.png
+    assetPath: Assets\New Folder\textures\green_shader.005_normal.png
+  reportItems: []
