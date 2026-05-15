@@ -310,6 +310,11 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &546991066 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 490576248761790154, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+  m_PrefabInstance: {fileID: 5393215579111688471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,8 +651,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278979813
-  m_fontColor: {r: 0.8962264, g: 0.04650232, b: 0.04650232, a: 1}
+    rgba: 4278519183
+  m_fontColor: {r: 0.5613208, g: 0.0211819, b: 0.0211819, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -731,10 +736,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 919662602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 500}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &919662601
 GameObject:
@@ -753,7 +758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &919662602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -769,10 +774,10 @@ RectTransform:
   - {fileID: 875033567}
   m_Father: {fileID: 1494005280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2560, y: 0}
+  m_SizeDelta: {x: -1200, y: -800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919662603
 MonoBehaviour:
@@ -787,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 0.9575472, b: 0.9481132, a: 0.24313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -962,7 +967,6 @@ GameObject:
   - component: {fileID: 1031519810}
   - component: {fileID: 1031519809}
   - component: {fileID: 1031519808}
-  - component: {fileID: 1031519811}
   - component: {fileID: 1031519812}
   m_Layer: 0
   m_Name: Board
@@ -1064,19 +1068,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031519806}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1031519811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031519806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc781575fd5fe44f863e0eab6c33337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  objectMessage: Interacted with Board
 --- !u!114 &1031519812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,7 +1318,7 @@ RectTransform:
   m_Children:
   - {fileID: 1052268317}
   - {fileID: 919662602}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2018935582}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1365,6 +1356,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoardUI
   boardPanel: {fileID: 919662601}
   boardText: {fileID: 875033565}
+  player: {fileID: 546991066}
+  board: {fileID: 1031519807}
+  closeDistance: 5
   message: '- Room 18 at 9:45
 
     - Archive file 317
@@ -1802,6 +1796,7 @@ Transform:
   - {fileID: 1823046973}
   - {fileID: 390783156}
   - {fileID: 1031519807}
+  - {fileID: 1494005280}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2114283753834967212
@@ -2197,5 +2192,4 @@ SceneRoots:
   - {fileID: 1722851946}
   - {fileID: 1017687588}
   - {fileID: 2018935582}
-  - {fileID: 1494005280}
   - {fileID: 1653771887}

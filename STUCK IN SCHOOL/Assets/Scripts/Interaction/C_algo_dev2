@@ -1,0 +1,16 @@
+def triPile(a):
+    pile = []
+    next_out = 1
+    i = 0 
+    n = len(a)
+    
+    while next_out <= n:
+        if pile and pile[-1] == next_out:
+            pile.pop()       
+            next_out += 1
+        elif i < n:
+            pile.append(a[i])  
+            i += 1
+        else:
+            return False   
+    return True

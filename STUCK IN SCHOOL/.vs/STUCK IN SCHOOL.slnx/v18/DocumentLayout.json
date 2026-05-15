@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\connectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\connectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\weightcube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weightcube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\interaction\\elevatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\elevatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|c:\\users\\pc\\documents\\projetgaming\\stuck in school\\assets\\scripts\\interaction\\boardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\boardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +43,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ConnectionManager.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\ConnectionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ConnectionManager.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\ConnectionManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ConnectionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T18:26:49.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeightCube.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\WeightCube.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WeightCube.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\WeightCube.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WeightCube.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T18:00:42.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ElevatorController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\ElevatorController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\ElevatorController.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\ElevatorController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\ElevatorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T12:15:28.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BoardUI.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\BoardUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\BoardUI.cs",
@@ -38,12 +89,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Interaction\\BoardUI.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAswBUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:39:12.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T10:39:12.476Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "BoardInteract.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\BoardInteract.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\BoardInteract.cs",
@@ -55,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "PlayerInteract.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\PlayerInteract.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\PlayerInteract.cs",
@@ -67,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Interactable.cs",
               "DocumentMoniker": "C:\\Users\\pc\\Documents\\ProjetGaming\\STUCK IN SCHOOL\\Assets\\Scripts\\Interaction\\Interactable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\Interactable.cs",
@@ -75,8 +125,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Interaction\\Interactable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T15:20:59.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-15T15:20:59.787Z"
             }
           ]
         }

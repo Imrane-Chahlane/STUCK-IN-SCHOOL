@@ -1,0 +1,11 @@
+Model Information:
+* title:	Weight
+* source:	https://sketchfab.com/3d-models/weight-1e644effb81d4b368caf26972fb30347
+* author:	jaromir.ternavskiy (https://sketchfab.com/jaromir.ternavskiy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Weight" (https://sketchfab.com/3d-models/weight-1e644effb81d4b368caf26972fb30347) by jaromir.ternavskiy (https://sketchfab.com/jaromir.ternavskiy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

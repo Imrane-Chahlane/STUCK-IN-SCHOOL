@@ -1,0 +1,11 @@
+Model Information:
+* title:	Metal Weight
+* source:	https://sketchfab.com/3d-models/metal-weight-2d9bf66dd18b49bb92d415c0561e52e9
+* author:	Karl Hodge (https://sketchfab.com/karlhodge)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Metal Weight" (https://sketchfab.com/3d-models/metal-weight-2d9bf66dd18b49bb92d415c0561e52e9) by Karl Hodge (https://sketchfab.com/karlhodge) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

@@ -56,12 +56,15 @@
     <Compile Include="Assets\Scenes\scenes testing\ThirdPersonController\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\Interaction\PlayerInteract.cs" />
     <Compile Include="Assets\Scripts\Interaction\BoardUI.cs" />
+    <Compile Include="Assets\Scripts\WeightCube.cs" />
     <Compile Include="Assets\BoardInteraction.cs" />
     <Compile Include="Assets\Scripts\Player\mycontrolle.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Interaction\BoardInteract.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\ConnectionManager.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\Interaction\ElevatorController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
