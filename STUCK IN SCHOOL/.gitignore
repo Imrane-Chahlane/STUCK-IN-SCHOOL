@@ -17,6 +17,9 @@ UserSettings/
 *.user
 *.pidb
 *.booproj
+*.anim
+*.glb
+*.fbx
 
 # OS files
 .DS_Store
