@@ -55,6 +55,7 @@
     <Compile Include="Assets\Scripts\Interaction\IInteractable.cs" />
     <Compile Include="Assets\Scenes\scenes testing\ThirdPersonController\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\Interaction\PlayerInteract.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\puzzle 2 p1\ProjectorSystem.cs" />
     <Compile Include="Assets\Scripts\Interaction\KeyUIManager.cs" />
     <Compile Include="Assets\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\DoorManager.cs" />
@@ -69,12 +70,15 @@
     <Compile Include="Assets\Scripts\Interaction\CursorToggle.cs" />
     <Compile Include="Assets\Scripts\Interaction\KeyDoor.cs" />
     <Compile Include="Assets\ParrelSync-master\Examples\CustomArgumentExample.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\puzzle 2 p1\DiscRotator.cs" />
     <Compile Include="Assets\Scripts\AddCollidersToChildren.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interactable.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Interaction\Keypad.cs" />
     <Compile Include="Assets\Scripts\TreasureOpening.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\puzzle 2 p1\PlayerDiscInteraction.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\puzzle 2 p1\FilmDisc.cs" />
     <Compile Include="Assets\Scripts\GameProgress.cs" />
     <Compile Include="Assets\PlayerCameraSetup.cs" />
     <Compile Include="Assets\Scripts\Interaction\LockerPuzzle.cs" />
