@@ -1,7 +1,7 @@
 ﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.StarterAssets.Editor.csproj" />
   <Project Path="VRMShaders.GLTF.IO.Runtime.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="URPWizard.csproj" />
   <Project Path="VRMShaders.VRM10.MToon10.Tests.csproj" />
   <Project Path="MToon.csproj" />

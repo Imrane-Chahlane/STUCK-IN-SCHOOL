@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8674283005069155020}
   m_Layer: 6
   m_Name: NestedParentArmature_Unpack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
   ShowTopMostFoldoutHeaderGroup: 1
   playerCamera: {fileID: 0}
-  interactDistance: 40
+  interactDistance: 10
   interactUI: {fileID: 0}
   keypad: {fileID: 0}
 --- !u!114 &819817927533635356
