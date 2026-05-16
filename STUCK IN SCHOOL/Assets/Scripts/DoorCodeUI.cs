@@ -10,6 +10,9 @@ public class DoorCodeUI : MonoBehaviour
     public TextMeshProUGUI codeDisplay;
     public TextMeshProUGUI messageText;
 
+    [Header("Key ID")]
+    public string requiredKeyId = "key_door_1";
+
     [Header("Door")]
     public Transform doorTransform;
     public Collider doorCollider;
@@ -52,7 +55,7 @@ public class DoorCodeUI : MonoBehaviour
             !isAnimating)
         {
             // Vérifier si le joueur a la clé
-            if (!PlayerInventory.keyFound)
+            if (!PlayerInventory.HasSpecificKey(requiredKeyId))
             {
                 ShowHint("");
                 return;

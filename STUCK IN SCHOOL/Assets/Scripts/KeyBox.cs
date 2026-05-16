@@ -7,6 +7,9 @@ public class KeyBox : MonoBehaviour
     [Header("Code")]
     public string correctCode = "54321";
 
+    [Header("Key ID")]
+    public string keyId = "key_door_1";
+
     [Header("UI")]
     public GameObject codePanel;
     public TextMeshProUGUI codeDisplay;
@@ -144,7 +147,7 @@ public class KeyBox : MonoBehaviour
 
         // Donner la clé
         if (localPlayer != null)
-            localPlayer.GiveKey();
+            localPlayer.GiveSpecificKey(keyId);
 
         // Faire apparaître le manuscript
         if (manuscript != null)
