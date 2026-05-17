@@ -12,6 +12,14 @@ public class ProjectorSystem : MonoBehaviour
     [Header("Animation")]
     public string discAnimationStateName = "DiscSpin";
 
+    [Header("Screen Materials")]
+    public Renderer screenRenderer;
+    public Material whiteScreenMaterial;
+    public Material videoScreenMaterial;
+
+    [Header("Projector Light")]
+    public Light projectorLight;
+
     private GameObject currentDisc;
     private Animator currentDiscAnimator;
 
@@ -20,6 +28,18 @@ public class ProjectorSystem : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached += OnVideoFinished;
+        }
+
+        // Au début du jeu, l'écran reste blanc
+        if (screenRenderer != null && whiteScreenMaterial != null)
+        {
+            screenRenderer.material = whiteScreenMaterial;
+        }
+
+        // Au début du jeu, la lumière du projecteur est éteinte
+        if (projectorLight != null)
+        {
+            projectorLight.enabled = false;
         }
     }
 
@@ -101,10 +121,22 @@ public class ProjectorSystem : MonoBehaviour
             Debug.LogWarning("No Animator found on inserted disc.");
         }
 
+        // Mettre le material vidéo sur l'écran
+        if (screenRenderer != null && videoScreenMaterial != null)
+        {
+            screenRenderer.material = videoScreenMaterial;
+        }
+
         // Start video
         videoPlayer.isLooping = false;
         videoPlayer.clip = filmDisc.filmClip;
         videoPlayer.Play();
+
+        // Allumer la lumière du projecteur
+        if (projectorLight != null)
+        {
+            projectorLight.enabled = true;
+        }
 
         Debug.Log("Disc inserted and video started: " + filmDisc.discName);
     }
@@ -117,6 +149,18 @@ public class ProjectorSystem : MonoBehaviour
         {
             currentDiscAnimator.enabled = false;
             Debug.Log("Disc animation stopped.");
+        }
+
+        // Quand la vidéo termine, remettre l'écran blanc
+        if (screenRenderer != null && whiteScreenMaterial != null)
+        {
+            screenRenderer.material = whiteScreenMaterial;
+        }
+
+        // Éteindre la lumière du projecteur
+        if (projectorLight != null)
+        {
+            projectorLight.enabled = false;
         }
     }
 }
