@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using Unity.Netcode;
 
-public class DoorCodeUI : MonoBehaviour
+public class DoorCodeUI : NetworkBehaviour
 {
     [Header("UI Elements")]
     public GameObject codePanel;
@@ -28,17 +29,34 @@ public class DoorCodeUI : MonoBehaviour
     private bool isAnimating = false;
     private Transform player;
 
+    // Synchronise l'état de la porte sur le réseau
+    private NetworkVariable<bool> _isDoorOpen = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
+
     void Start()
     {
-        codePanel.SetActive(false);
+        // Vérifiez avant de désactiver
+        if (codePanel != null)
+            codePanel.SetActive(false);
+        _isDoorOpen.OnValueChanged += OnDoorStateChanged;
+    }
+
+    void OnDoorStateChanged(bool oldValue, bool newValue)
+    {
+        if (newValue && !isDoorOpen)
+            StartCoroutine(OpenDoorSequence());
+        else if (!newValue && isDoorOpen)
+            StartCoroutine(CloseDoorSequence());
     }
 
     void Update()
     {
-        // Cherche le joueur si pas encore trouvé
         if (player == null)
         {
-            GameObject playerObj = 
+            GameObject playerObj =
                 GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null)
                 player = playerObj.transform;
@@ -54,37 +72,44 @@ public class DoorCodeUI : MonoBehaviour
             Input.GetKeyDown(interactKey) &&
             !isAnimating)
         {
-            // Vérifier si le joueur a la clé
             if (!PlayerInventory.HasSpecificKey(requiredKeyId))
             {
-                ShowHint("");
+                ShowHint("Vous avez besoin de la clé !");
                 return;
             }
 
-            // Le joueur a la clé → ouvrir/fermer
-            if (!isDoorOpen)
-                StartCoroutine(OpenDoorSequence());
+            // Demander au serveur d'ouvrir/fermer
+            if (!_isDoorOpen.Value)
+                RequestOpenDoorServerRpc();
             else
-                StartCoroutine(CloseDoorSequence());
+                RequestCloseDoorServerRpc();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && isPanelOpen)
             ClosePanel();
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    void RequestOpenDoorServerRpc()
+    {
+        _isDoorOpen.Value = true;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void RequestCloseDoorServerRpc()
+    {
+        _isDoorOpen.Value = false;
+    }
+
     void ShowHint(string msg)
     {
         if (messageText != null)
         {
-            // Annuler l'ancien Invoke si existant
             CancelInvoke("HideHint");
-            
             messageText.text = msg;
             messageText.color = Color.yellow;
-            codePanel.SetActive(true);
-            
-            // Attendre 3 secondes avant de cacher
-            Invoke("HideHint", 20f);
+            // codePanel.SetActive(true);
+            Invoke("HideHint", 5f);
         }
     }
 
@@ -96,8 +121,6 @@ public class DoorCodeUI : MonoBehaviour
             messageText.text = "";
     }
 
-    
-
     void ShowMessage(string msg, Color color)
     {
         if (messageText != null)
@@ -105,15 +128,6 @@ public class DoorCodeUI : MonoBehaviour
             messageText.text = msg;
             messageText.color = color;
         }
-    }
-
-    void TogglePanel()
-    {
-        isPanelOpen = !isPanelOpen;
-        codePanel.SetActive(isPanelOpen);
-        Cursor.lockState = isPanelOpen ?
-            CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = isPanelOpen;
     }
 
     void ClosePanel()
@@ -127,7 +141,6 @@ public class DoorCodeUI : MonoBehaviour
     IEnumerator OpenDoorSequence()
     {
         isAnimating = true;
-
         if (doorCollider != null)
             doorCollider.enabled = false;
 

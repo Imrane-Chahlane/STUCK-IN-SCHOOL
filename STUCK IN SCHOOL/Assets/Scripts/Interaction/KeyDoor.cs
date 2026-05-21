@@ -38,6 +38,7 @@ public class KeyDoor : MonoBehaviour, IInteractable
 
             if (opener != null)
                 opener.RequestOpenDoorServerRpc(gameObject.name);
+                opener.RequestOpenDoorServerRpc("PUERTA_5"); 
         }
         else
         {

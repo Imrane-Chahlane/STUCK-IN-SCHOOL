@@ -1,8 +1,10 @@
+
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using Unity.Netcode;
 
-public class KeyBox : MonoBehaviour
+public class KeyBox : NetworkBehaviour
 {
     [Header("Code")]
     public string correctCode = "54321";
@@ -27,24 +29,39 @@ public class KeyBox : MonoBehaviour
     public float interactionDistance = 15f;
     public KeyCode interactKey = KeyCode.E;
 
+
     private string currentInput = "";
     private bool isPanelOpen = false;
     private bool isUnlocked = false;
     private PlayerInventory localPlayer;
 
+    private NetworkVariable<bool> _isUnlocked = new NetworkVariable<bool>(
+        false,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    );
+
     void Start()
     {
         if (codePanel != null)
             codePanel.SetActive(false);
+        _isUnlocked.OnValueChanged += OnUnlockedChanged;
+    }
+
+    void OnUnlockedChanged(bool oldValue, bool newValue)
+    {
+        if (newValue && !isUnlocked)
+        {
+            isUnlocked = true;
+            StartCoroutine(PlayAnimationThenShowMessage());
+        }
     }
 
     void Update()
     {
-        // Cherche le joueur local
         if (localPlayer == null)
         {
-            foreach (var p in
-                FindObjectsOfType<PlayerInventory>())
+            foreach (var p in FindObjectsOfType<PlayerInventory>())
             {
                 if (p.IsOwner)
                 {
@@ -55,7 +72,6 @@ public class KeyBox : MonoBehaviour
             return;
         }
 
-        // Si déjà déverrouillé on ne fait rien
         if (isUnlocked) return;
 
         float dist = Vector3.Distance(
@@ -73,7 +89,6 @@ public class KeyBox : MonoBehaviour
             ClosePanel();
     }
 
-    // === BOUTONS CHIFFRES ===
     public void Press0() { AddNumber("0"); }
     public void Press1() { AddNumber("1"); }
     public void Press2() { AddNumber("2"); }
@@ -91,13 +106,11 @@ public class KeyBox : MonoBehaviour
         {
             currentInput += number;
             UpdateDisplay();
-            // Effacer message erreur
             if (messageText != null)
                 messageText.text = "";
         }
     }
 
-    // === BOUTON SUPPRIMER ===
     public void PressDelete()
     {
         if (currentInput.Length > 0)
@@ -108,8 +121,6 @@ public class KeyBox : MonoBehaviour
         }
     }
 
-    // === BOUTON CONFIRMER ===
-    // === BOUTON CONFIRMER ===
     public void PressConfirm()
     {
         if (currentInput.Length == 0)
@@ -121,8 +132,7 @@ public class KeyBox : MonoBehaviour
         if (currentInput == correctCode)
         {
             ShowMessage("Code correct !", Color.green);
-            isUnlocked = true;
-            StartCoroutine(PlayAnimationThenShowMessage());
+            RequestUnlockServerRpc();
         }
         else
         {
@@ -132,10 +142,30 @@ public class KeyBox : MonoBehaviour
         }
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    void RequestUnlockServerRpc()
+    {
+        _isUnlocked.Value = true;
+        GiveKeyToAllClientRpc();
+    }
+
+    [ClientRpc]
+    void GiveKeyToAllClientRpc()
+    {
+        foreach (var p in FindObjectsOfType<PlayerInventory>())
+        {
+            if (p.IsOwner)
+            {
+                p.GiveSpecificKey(keyId);
+                break;
+            }
+        }
+    }
+
     IEnumerator PlayAnimationThenShowMessage()
     {
         Invoke("ClosePanel", 0.5f);
-        // Animation chest une seule fois
+
         if (chestAnimation != null)
         {
             chestAnimation[openClipName].wrapMode = WrapMode.Once;
@@ -145,29 +175,19 @@ public class KeyBox : MonoBehaviour
             );
         }
 
-        // Donner la clé
-        if (localPlayer != null)
-            localPlayer.GiveSpecificKey(keyId);
-
-        // Faire apparaître le manuscript
         if (manuscript != null)
         {
             manuscript.SetActive(true);
-            // Disparaît après 10 secondes
             yield return new WaitForSeconds(manuscriptDuration);
             manuscript.SetActive(false);
         }
-
-        
     }
 
-    // === BOUTON ANNULER ===
     public void PressCancel()
     {
         ClosePanel();
     }
 
-    // === FONCTIONS INTERNES ===
     void TogglePanel()
     {
         isPanelOpen = !isPanelOpen;
