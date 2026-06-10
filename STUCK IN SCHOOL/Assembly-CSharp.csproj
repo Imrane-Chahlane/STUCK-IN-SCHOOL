@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\CabinetKey.cs" />
     <Compile Include="Assets\Scripts\Interaction\LockerPuzzle.cs" />
     <Compile Include="Assets\Scripts\Porte E\DoorTrigger.cs" />
+    <Compile Include="Assets\Scripts\Porte E\DoorControllerY.cs" />
     <Compile Include="Assets\Scripts\Player\MouseLook.cs" />
   </ItemGroup>
   <ItemGroup>
