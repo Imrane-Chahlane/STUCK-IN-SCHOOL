@@ -54,6 +54,7 @@
     <Compile Include="Assets\Scripts\KeyBox.cs" />
     <Compile Include="Assets\Scripts\Interaction\IInteractable.cs" />
     <Compile Include="Assets\Scenes\scenes testing\ThirdPersonController\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\Scripts\telecommunication\VoiceTelecomManager.cs" />
     <Compile Include="Assets\Scripts\Interaction\PlayerInteract.cs" />
     <Compile Include="Assets\Scripts\Porte E\DoorSplitManager.cs" />
     <Compile Include="Assets\Scripts\Puzzle\puzzle 2 p1\ProjectorSystem.cs" />
@@ -112,6 +113,7 @@
     <None Include="Assets\Models\Novacorp Studios\Shaders\VRMShaders\GLTF\IO\Resources\UniGLTF\NormalMapExporter.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Scenes\full_game\Lvl2 Prefabs and materials\imgs\ginger_times\More Info.txt" />
     <None Include="Assets\Models\Novacorp Studios\Shaders\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_lighting_mtoon.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Models\Novacorp Studios\Shaders\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_forward_vertex.hlsl" />
