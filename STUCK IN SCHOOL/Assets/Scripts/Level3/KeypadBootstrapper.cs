@@ -1,12 +1,16 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
 namespace NavKeypad
 {
+    /// <summary>
+    /// Gère l'interaction clavier/souris avec le keypad et l'ouverture des portes.
+    /// Doit être placé sur la caméra du joueur local (NetworkObject avec ownership).
+    /// </summary>
     [RequireComponent(typeof(Camera))]
-    public class KeypadBootstrapper : MonoBehaviour
+    public class KeypadBootstrapper : NetworkBehaviour
     {
         [Header("Door Paths")]
         [SerializeField] private string[] doorPaths = new string[]
@@ -34,19 +38,29 @@ namespace NavKeypad
             gameObject.tag = "MainCamera";
         }
 
-        private void Start()
+        // OnNetworkSpawn remplace Start() pour s'assurer que le NetworkObject est prêt.
+        public override void OnNetworkSpawn()
         {
+            base.OnNetworkSpawn();
+
+            // Désactive la caméra pour les autres clients : chacun n'utilise que sa propre caméra.
+            cam.enabled = IsOwner;
+
+            // Seul le owner local initialise l'écoute du keypad.
+            if (!IsOwner) return;
+
             keypad = FindObjectOfType<Keypad>();
             if (keypad == null)
             {
                 Debug.LogError("[KeypadBootstrapper] No Keypad found! Drag Assets/Keypad/Prefabs/Keypad.prefab into the scene.");
                 return;
             }
-            keypad.OnAccessGranted.AddListener(OpenAllDoors);
+
+            // Quand le code est bon, on demande au serveur d'ouvrir toutes les portes.
+            keypad.OnAccessGranted.AddListener(RequestOpenAllDoorsServerRpc);
             Debug.Log("[KeypadBootstrapper] Keypad found and wired.");
 
             FindDoors();
-
             setupComplete = true;
         }
 
@@ -61,6 +75,7 @@ namespace NavKeypad
                     Debug.LogWarning($"[KeypadBootstrapper] Door not found: {path}");
                     continue;
                 }
+
                 DoorSlider slider = go.GetComponent<DoorSlider>();
                 if (slider == null)
                 {
@@ -101,12 +116,14 @@ namespace NavKeypad
 
         private void Update()
         {
-            if (!setupComplete) return;
+            // Seul le propriétaire local gère les inputs.
+            if (!IsOwner || !setupComplete) return;
 
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
                 Vector2 mousePos = Mouse.current.position.ReadValue();
                 Ray ray = cam.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y, 0f));
+
                 if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
                 {
                     KeypadButton btn = hit.collider.GetComponent<KeypadButton>();
@@ -119,9 +136,28 @@ namespace NavKeypad
             }
         }
 
-        private void OpenAllDoors()
+        /// <summary>
+        /// Appelé par le client owner. Le serveur valide et propage l'ouverture à tous.
+        /// </summary>
+        [ServerRpc]
+        private void RequestOpenAllDoorsServerRpc()
         {
-            Debug.Log("[KeypadBootstrapper] Correct code! Opening doors...");
+            Debug.Log("[KeypadBootstrapper] Server: correct code received. Opening doors on all clients...");
+            OpenAllDoorsClientRpc();
+        }
+
+        /// <summary>
+        /// Exécuté sur TOUS les clients pour ouvrir les portes de manière synchronisée.
+        /// </summary>
+        [ClientRpc]
+        private void OpenAllDoorsClientRpc()
+        {
+            Debug.Log("[KeypadBootstrapper] Client: opening doors...");
+
+            // Les portes peuvent ne pas encore être trouvées sur les autres clients (pas owner).
+            // On les résout ici si la liste est vide.
+            if (doors.Count == 0) FindDoors();
+
             foreach (DoorSlider door in doors)
             {
                 if (door != null) door.Open();
