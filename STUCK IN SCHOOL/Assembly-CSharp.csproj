@@ -53,14 +53,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\KeyBox.cs" />
     <Compile Include="Assets\Scripts\Interaction\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\ChatManager\MicToggleUI.cs" />
     <Compile Include="Assets\Scenes\scenes testing\ThirdPersonController\Scripts\ThirdPersonController.cs" />
-    <Compile Include="Assets\Scripts\telecommunication\VoiceTelecomManager.cs" />
     <Compile Include="Assets\Scripts\Interaction\PlayerInteract.cs" />
+    <Compile Include="Assets\Scripts\Porte E\DoorSplitManager2.cs" />
     <Compile Include="Assets\Scripts\Porte E\DoorSplitManager.cs" />
     <Compile Include="Assets\Scripts\Puzzle\puzzle 2 p1\ProjectorSystem.cs" />
     <Compile Include="Assets\Scripts\Interaction\KeyUIManager.cs" />
     <Compile Include="Assets\Keypad\Scripts\KeypadButton.cs" />
     <Compile Include="Assets\Scripts\DoorManager.cs" />
+    <Compile Include="Assets\Scripts\Porte E\DoorTriger2.cs" />
     <Compile Include="Assets\Scripts\Player\mycontrolle.cs" />
     <Compile Include="Assets\Scripts\DoorCodeUI.cs" />
     <Compile Include="Assets\Scripts\Porte E\DoorController.cs" />
@@ -81,8 +83,10 @@
     <Compile Include="Assets\Scripts\AddCollidersToChildren.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interactable.cs" />
     <Compile Include="Assets\Scripts\PlayerCameraSetup.cs" />
+    <Compile Include="Assets\Scripts\Porte E\DoorF1Controller.cs" />
     <Compile Include="Assets\Keypad\Scripts\SlidingDoor.cs" />
     <Compile Include="Assets\Scripts\TestOpenCabinet.cs" />
+    <Compile Include="Assets\Scripts\ChatManager\VoiceChatManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Level3\KeypadBootstrapper.cs" />
     <Compile Include="Assets\Scripts\SlidingDoor.cs" />
